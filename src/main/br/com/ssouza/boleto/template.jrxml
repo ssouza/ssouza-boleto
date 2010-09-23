@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Boleto_Bancario" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="510" leftMargin="43" rightMargin="42" topMargin="42" bottomMargin="42">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="23"/>
+	<property name="ireport.y" value="225"/>
+	<parameter name="CEDENTE_CPF_CNPJ" class="java.lang.String"/>
+	<parameter name="CEDENTE" class="java.lang.String"/>
+	<parameter name="CEDENTE_AGENCIA_CODIGO" class="java.lang.String"/>
+	<parameter name="DATA_VENCIMENTO" class="java.lang.String"/>
+	<parameter name="DATA_PROCESSAMENTO" class="java.lang.String"/>
+	<parameter name="DATA_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="NUMERO_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="NOSSO_NUMERO" class="java.lang.String"/>
+	<parameter name="ESPECIE_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="ACEITE" class="java.lang.String"/>
+	<parameter name="CARTEIRA" class="java.lang.String"/>
+	<parameter name="ESPECIE_MOEDA" class="java.lang.String"/>
+	<parameter name="QUANTIDADE" class="java.lang.String"/>
+	<parameter name="VALOR_MOEDA" class="java.lang.String"/>
+	<parameter name="VALOR_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="INSTRUCAO_1" class="java.lang.String"/>
+	<parameter name="INSTRUCAO_2" class="java.lang.String"/>
+	<parameter name="INSTRUCAO_3" class="java.lang.String"/>
+	<parameter name="INSTRUCAO_4" class="java.lang.String"/>
+	<parameter name="INSTRUCAO_5" class="java.lang.String"/>
+	<parameter name="CODIGO_DIGITAVEL" class="java.lang.String"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="SACADO" class="java.lang.String"/>
+	<parameter name="SACADO_CPF_CNPJ" class="java.lang.String"/>
+	<parameter name="SACADO_LOGRADOURO" class="java.lang.String"/>
+	<parameter name="SACADO_BAIRRO" class="java.lang.String"/>
+	<parameter name="SACADO_CEP" class="java.lang.String"/>
+	<parameter name="SACADO_CIDADE" class="java.lang.String"/>
+	<parameter name="SACADO_UF" class="java.lang.String"/>
+	<parameter name="LOGO_BANCO" class="java.net.URL"/>
+	<parameter name="CODIGO_BANCO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="VALOR" class="java.lang.String"/>
+	<title>
+		<band height="758" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="90" width="127" height="26" backcolor="#EAE4DE"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="40" width="127" height="26" backcolor="#EAE4DE"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="250" width="127" height="26" backcolor="#EAE4DE"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="325" width="127" height="26" backcolor="#EAE4DE"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="5" width="134" height="35"/>
+				<imageExpression class="java.net.URL"><![CDATA[$P{LOGO_BANCO}]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="0" y="545" width="326" height="52"/>
+				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" displayChecksum="true">
+					<jr:codeExpression><![CDATA[$P{CODIGO}]]></jr:codeExpression>
+				</jr:Interleaved2Of5>
+			</componentElement>
+			<textField>
+				<reportElement x="181" y="215" width="329" height="35"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CODIGO_DIGITAVEL}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="40" width="510" height="100"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="65" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="90" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="115" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="127" y="90" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="382" y="40" width="1" height="100"/>
+			</line>
+			<line>
+				<reportElement x="0" y="200" width="510" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="250" width="510" height="275"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="275" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="300" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="325" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="350" width="510" height="1"/>
+			</line>
+			<line>
+				<reportElement x="382" y="375" width="128" height="1"/>
+			</line>
+			<line>
+				<reportElement x="382" y="400" width="128" height="1"/>
+			</line>
+			<line>
+				<reportElement x="382" y="250" width="1" height="225"/>
+			</line>
+			<line>
+				<reportElement x="382" y="425" width="128" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="67" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Nosso Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="67" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Espécie Doc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="67" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Número do Doc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="67" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Agência/Cód. Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="92" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="92" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(-) Deduções]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="92" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(+) Acréscimos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="92" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Cobrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="117" width="90" height="24"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Sacado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="117" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[CPF/CNPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="292" y="141" width="218" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Autenticação Mecânica/Recibo do Sacado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="42" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="42" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Vencimento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="382" y="450" width="128" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="475" width="510" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="384" y="252" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Vencimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="277" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Agência/Cód. Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="302" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Nosso Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="327" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="352" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(-) Descontos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="377" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(-) Outras Deduções]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="402" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(+) Mora/Multa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="427" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(+) Outros Acréscimos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="452" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Cobrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="252" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Local de Pagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="250" width="380" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="10" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[Pagável em qualquer Banco até o vencimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="277" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="302" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Data Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="302" width="62" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Espécie Doc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="302" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Número do Doc.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="255" y="300" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="295" y="300" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="257" y="302" width="38" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Aceite]]></text>
+			</staticText>
+			<line>
+				<reportElement x="95" y="300" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="127" y="325" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="327" width="126" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Uso do Banco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="327" width="67" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Valor Moeda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="327" width="70" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="327" width="50" height="24"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Carteira]]></text>
+			</staticText>
+			<line>
+				<reportElement x="241" y="325" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="181" y="327" width="60" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Esp. Moeda]]></text>
+			</staticText>
+			<line>
+				<reportElement x="179" y="325" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="313" y="325" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="352" width="125" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Instruções]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="477" width="378" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Sacado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="605" width="510" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="292" y="526" width="218" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Autenticação Mecânica/Ficha de Compensação]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="215" width="134" height="35"/>
+				<imageExpression class="java.net.URL"><![CDATA[$P{LOGO_BANCO}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="95" y="65" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="190" y="65" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="285" y="65" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="255" y="90" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="287" y="67" width="93" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Data Documento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="190" y="300" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement x="297" y="302" width="86" height="24"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Data Proc.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="384" y="275" width="125" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CEDENTE_AGENCIA_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="275" width="378" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CEDENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="192" y="65" width="93" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ESPECIE_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="192" y="300" width="62" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ESPECIE_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="384" y="300" width="125" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NOSSO_NUMERO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="257" y="300" width="38" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ACEITE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="297" y="300" width="86" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DATA_PROCESSAMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="181" y="325" width="60" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ESPECIE_MOEDA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="129" y="325" width="50" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CARTEIRA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="97" y="300" width="93" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NUMERO_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="2" y="300" width="93" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DATA_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="382" y="325" width="125" height="24"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{VALOR_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="313" y="325" width="67" height="24"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{VALOR_MOEDA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="243" y="325" width="70" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{QUANTIDADE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="384" y="250" width="125" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DATA_VENCIMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="363" width="380" height="111"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{INSTRUCAO_1}
++ "\n" + $P{INSTRUCAO_2}
++ "\n" + $P{INSTRUCAO_3}
++ "\n" + $P{INSTRUCAO_4}
++ "\n" + $P{INSTRUCAO_5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="97" y="65" width="93" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NUMERO_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="0" y="90" width="125" height="24"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{VALOR_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="115" width="378" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SACADO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="384" y="115" width="125" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SACADO_CPF_CNPJ}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="488" width="507" height="36"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SACADO} + " (" + $P{SACADO_CPF_CNPJ} + ")"
++ "\n" + $P{SACADO_LOGRADOURO} + " - " + $P{SACADO_BAIRRO}
++ "\n" + $P{SACADO_CEP} + " - " + $P{SACADO_CIDADE} + " - " + $P{SACADO_UF}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="65" width="93" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NOSSO_NUMERO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="384" y="65" width="125" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CEDENTE_AGENCIA_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="287" y="65" width="93" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DATA_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="384" y="40" width="125" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DATA_VENCIMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="40" width="378" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CEDENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="181" y="5" width="329" height="35"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CODIGO_DIGITAVEL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="180" y="5" width="1" height="35"/>
+			</line>
+			<line>
+				<reportElement x="134" y="5" width="1" height="35"/>
+			</line>
+			<line>
+				<reportElement x="134" y="215" width="1" height="35"/>
+			</line>
+			<line>
+				<reportElement x="180" y="215" width="1" height="35"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="135" y="5" width="45" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CODIGO_BANCO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="135" y="215" width="45" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="12" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CODIGO_BANCO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
