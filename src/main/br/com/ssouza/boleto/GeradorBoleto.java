@@ -12,8 +12,8 @@ import net.sf.jasperreports.engine.JasperRunManager;
 
 import org.apache.commons.lang.Validate;
 
-import br.com.ssouza.util.DateUtils;
-import br.com.ssouza.util.ParseUtils;
+import br.com.ssouza.util.DataHelper;
+import br.com.ssouza.util.ParseHelper;
 
 public class GeradorBoleto {
 
@@ -26,7 +26,7 @@ public class GeradorBoleto {
 		this.boleto = boleto;
 	}
 
-	public void toPDF (HttpServletResponse response) {
+	public void toPDF(HttpServletResponse response) {
 
 		try {
 
@@ -57,7 +57,7 @@ public class GeradorBoleto {
 		}
 	}
 
-	private Map<String, Object> getParametros () throws IOException {
+	private Map<String, Object> getParametros() throws IOException {
 
 		Cedente cedente = boleto.getCedente();
 		Sacado sacado = boleto.getSacado();
@@ -78,14 +78,15 @@ public class GeradorBoleto {
 
 		map.put("CEDENTE_AGENCIA_CODIGO", agenciaCodigo.toString());
 
-		map.put("DATA_VENCIMENTO", ParseUtils.dateToString(datas.getVencimento().getTime(),
-				DateUtils.PATTERN_DD_MM_YYYY));
+		map.put("DATA_VENCIMENTO", ParseHelper.dateToString(datas.getVencimento().getTime(),
+				DataHelper.PATTERN_DD_MM_YYYY));
 
-		map.put("DATA_PROCESSAMENTO", ParseUtils.dateToString(datas.getProcessamento().getTime(),
-				DateUtils.PATTERN_DD_MM_YYYY));
+		map.put("DATA_PROCESSAMENTO", ParseHelper.dateToString(datas.getProcessamento().getTime(),
+				DataHelper.PATTERN_DD_MM_YYYY));
 
-		map.put("DATA_DOCUMENTO", ParseUtils.dateToString(datas.getDocumento().getTime(),
-				DateUtils.PATTERN_DD_MM_YYYY));
+		map
+				.put("DATA_DOCUMENTO", ParseHelper.dateToString(datas.getDocumento().getTime(),
+						DataHelper.PATTERN_DD_MM_YYYY));
 
 		map.put("NUMERO_DOCUMENTO", boleto.getNumeroDocumentoFormatado());
 
@@ -109,7 +110,7 @@ public class GeradorBoleto {
 		// map.put("QUANTIDADE", boleto.getQuantidadeMoeda());
 		// map.put("VALOR_MOEDA", null);
 
-		map.put("VALOR_DOCUMENTO", ParseUtils.bigDecimalToString(boleto.getValor()));
+		map.put("VALOR_DOCUMENTO", ParseHelper.bigDecimalToString(boleto.getValor()));
 
 		int i = 1;
 		for (String instrucao : boleto.getInstrucoes()) {

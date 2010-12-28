@@ -7,7 +7,7 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
-import br.com.ssouza.util.DateUtils;
+import br.com.ssouza.util.DataHelper;
 
 public class BoletoTest {
 
@@ -25,7 +25,7 @@ public class BoletoTest {
 	@Test
 	public void regraFatorVencimentoComPrimeiraHoraDoDia() {
 
-		Calendar vencimento = DateUtils.getPrimeiraHoraDoDia(3, 7, 2000);
+		Calendar vencimento = DataHelper.getPrimeiraHoraDoDia(3, 7, 2000);
 
 		Datas datas = Datas.newDatas().withVencimento(vencimento);
 
@@ -37,7 +37,7 @@ public class BoletoTest {
 	@Test
 	public void regraFatorVencimentoComUltimaHoraDoDia() {
 
-		Calendar vencimento = DateUtils.getUltimaHoraDoDia(3, 7, 2000);
+		Calendar vencimento = DataHelper.getUltimaHoraDoDia(3, 7, 2000);
 
 		Datas datas = Datas.newDatas().withVencimento(vencimento);
 
@@ -49,7 +49,7 @@ public class BoletoTest {
 	@Test
 	public void regraFatorVencimentoDataMaxima() {
 
-		Calendar vencimento = DateUtils.getUltimaHoraDoDia(21, 2, 2025);
+		Calendar vencimento = DataHelper.getUltimaHoraDoDia(21, 2, 2025);
 
 		Datas datas = Datas.newDatas().withVencimento(vencimento);
 

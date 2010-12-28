@@ -1,8 +1,11 @@
 == CHANGELOG
 
+=== 0.2.1
+* Adicionado a dependência ao ssouza-framework-0.1
+
 === 0.2 :
-* Boleto para o Banco ItaÃº
+* Boleto para o Banco Itaú
 
 === 0.1:
-* VersÃ£o inicial
+* Versão inicial
 
