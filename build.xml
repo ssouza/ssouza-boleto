@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="framework-ssouza" default="develop-dist" basedir=".">
+
+	<property file="build/build.properties" />
+
+	<property name="tmp.dir" value="tmp" />
+	<property name="tmp.src.dir" value="${tmp.dir}/src" />
+	<property name="tmp.build.dir" value="${tmp.dir}/classes" />
+	<property name="output.dir" value="${tmp.dir}" />
+	<property name="libs.dir" value="lib" />
+	<property name="dist.dir" value="dist" />
+	<property name="src.dir" value="src/main" />
+	<property name="file.jar.name" value="${application.name}-${application.version}.jar" />
+	<property name="file.src.name" value="${application.name}-${application.version}-src.zip" />
+
+	<defaultexcludes add="**/.svn" />
+	<defaultexcludes add="**/.svn/**" />
+	<defaultexcludes add="**/_svn" />
+	<defaultexcludes add="**/_svn/**" />
+
+	<!-- 
+		****************************
+		**  Compile and build jar **
+		****************************
+	-->
+
+	<target name="create-tmp">
+		<echo>Criando diretório tmp...</echo>
+		<mkdir dir="${tmp.dir}" />
+		<mkdir dir="${tmp.src.dir}" />
+		<mkdir dir="${tmp.build.dir}" />
+	</target>
+	
+	<target name="create-dist">
+		<echo>Criando diretório dist...</echo>
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="delete-tmp">
+		<echo>Apagando o diretório tmp...</echo>
+		<delete dir="${tmp.dir}" failonerror="no" includeemptydirs="true" />
+	</target>
+
+	<target name="clean-dist">
+		<echo>Limpando o diretório dist...</echo>
+		<delete includeemptydirs="true" verbose="false" failonerror="no">
+			<fileset dir="${dist.dir}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="dist-jar">
+		<antcall target="create-tmp" />
+		<antcall target="create-dist" />
+		<echo>Compilando o código fonte...</echo>
+		<javac srcdir="${src.dir}" destdir="${tmp.build.dir}" debug="true" optimize="true" failonerror="false" encoding="ISO-8859-1" target="1.6" verbose="false" source="1.6">
+			<classpath>
+				<fileset dir="${libs.dir}" includes="*" />
+			</classpath>
+		</javac>
+		<copy todir="${tmp.build.dir}">
+			<fileset dir="${src.dir}">
+				<exclude name="**/*.java" />
+				<exclude name="**/*.jrxml" />
+			</fileset>
+		</copy>
+		<echo>Criando o ${file.jar.name} no dist...</echo>
+		<jar destfile="${dist.dir}/${file.jar.name}">
+			<fileset dir="${tmp.build.dir}" />
+		</jar>
+	</target>
+
+	<target name="dist-src-zip">
+		<echo>Copiando o código fonte...</echo>
+		<copy todir="${tmp.src.dir}">
+			<fileset dir="${src.dir}" />
+		</copy>
+		<echo>Criando o ${file.src.name} no dist...</echo>
+		<zip destfile="${dist.dir}/${file.src.name}">
+			<fileset dir="${tmp.src.dir}" />
+		</zip>
+	</target>
+
+	<target name="develop-dist">
+		<antcall target="clean-dist" />
+		<antcall target="dist-jar" />
+		<antcall target="dist-src-zip" />
+		<antcall target="delete-tmp" />
+	</target>
+
+</project>
