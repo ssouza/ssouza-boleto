@@ -1,11 +1,11 @@
 == CHANGELOG
 
 === 0.2.1
-* Adicionado a dependência ao ssouza-framework-0.1
+* Adicionado a dependência ao ssouza-core-0.1.jar
 
 === 0.2 :
-* Boleto para o Banco Itaú
+* Geração de Boleto para o Banco Itaú
 
 === 0.1:
-* Versão inicial
+* Versão beta
 
